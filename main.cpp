@@ -7,7 +7,7 @@ int main()
     while (1 < 2)
     {
         int menu = 1;
-        cout << "1. (Distance & Time known) Calculate rating" << endl;
+        cout << "\n\n1. (Distance & Time known) Calculate rating" << endl;
         cout << "2. (Rating & Distance known) Rating to kph" << endl;
         cout << "3. (Rating & Speed known) Rating to distance" << endl;
         cout << "Choose: ";
@@ -19,7 +19,7 @@ int main()
             float hours;
             float minutes;
             float seconds;
-            cout << "\n\nDistance in km: ";
+            cout << "\nDistance in km: ";
             cin >> distance;
             cout << "Finish time hours: ";
             cin >> hours;
