@@ -1,4 +1,4 @@
 # RunElo
 Running ELO
 
-Rating = (kph*100)+(km*50)
+Rating = (kph\*100)+(km\*50)
