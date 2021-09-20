@@ -7,10 +7,10 @@ int main()
     while (1 < 2)
     {
         int menu = 1;
-        cout << "\n\n1. (Distance & Time known) Calculate rating" << endl;
-        cout << "2. (Rating & Distance known) Rating to kph" << endl;
-        cout << "3. (Rating & Speed known) Rating to distance" << endl;
-        cout << "Choose: ";
+        cout << "\n\n1.Calculate rating     (Distance & Time known)" << endl;
+        cout << "2.Rating to kph        (Rating & Distance known)" << endl;
+        cout << "3.Rating to distance   (Rating & Speed known)" << endl;
+        cout << "\nChoose: ";
         cin >> menu;
 
         if (menu == 1)
