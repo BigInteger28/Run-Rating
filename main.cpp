@@ -1,6 +1,21 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
+
+float toPace(float kph) {
+    float seconds = 1000/(kph/3.6);
+    float minutes = int(seconds/60);
+    seconds = (seconds-(minutes*60))/100;
+    return minutes+seconds;
+}
+
+float toTime(float kph, float distance) {
+    float time = 60*(distance/kph);
+    float minutes = int(time);
+    float seconds = (time-minutes)*0.6;
+    return minutes+seconds;
+}
 
 int main()
 {
@@ -29,10 +44,13 @@ int main()
             cin >> seconds;
             float time = (hours*3600)+(minutes*60)+seconds;
             float speed = ((distance*1000)/time)*3.6;
+            float pace = toPace(speed);
             float elo = (speed*100)+(distance*50);
+            elo = roundf(elo * 100) / 100;
 
             cout << "\nSpeed is " << speed << " kph" << endl;
-            cout << "RATING is " << int(elo) << endl;
+            cout << "Pace is " << pace << " min/km" << endl;
+            cout << "RATING is " << elo << endl;
         }
 
         if (menu == 2)
@@ -46,7 +64,17 @@ int main()
             cin >> distance;
 
             float speed = (rating-(distance*50))/100;
+            float pace = toPace(speed);
+            float time = toTime(speed,distance);
+            float hours = 0;
+            while (time>60) {
+                hours++;
+                time -=60;
+            }
+
             cout << "\nSpeed is " << speed << " kph" << endl;
+            cout << "Pace is " << pace << " min/km" << endl;
+            cout << "Running time is " << hours << " hours " << time << " min.sec" << endl;
         }
 
         if (menu == 3)
